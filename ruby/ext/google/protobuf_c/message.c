@@ -1138,7 +1138,7 @@ static VALUE Message_encode(int argc, VALUE* argv, VALUE klass) {
  */
 static VALUE Message_encode_json(int argc, VALUE* argv, VALUE klass) {
   Message* msg = ruby_to_Message(argv[0]);
-  int options = 0;
+  int options = upb_JsonEncode_FormatEnumsAsIntegers;
   char buf[1024];
   size_t size;
   upb_Status status;
